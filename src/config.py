@@ -1,28 +1,29 @@
-# src/config.py
-from pathlib import Path
+import os
+from datetime import datetime
+
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+DATA_PATHS = {
+    "raw_reviews": os.path.join(PROJECT_ROOT, "data/raw/raw_reviews.csv"),
+    "clean_reviews": os.path.join(PROJECT_ROOT, "data/processed/cleaned_reviews.csv"),
+    "enriched_reviews": os.path.join(PROJECT_ROOT, "data/processed/enriched_reviews.csv")
+}
 
 APP_IDS = {
     "CBE": "com.combanketh.mobilebanking",
     "BOA": "com.boa.boaMobileBanking",
-    "DASHEN": "com.dashen.dashensuperapp"
+    "Dashen": "com.dashen.dashensuperapp"
 }
 
 BANK_NAMES = {
     "CBE": "Commercial Bank of Ethiopia",
     "BOA": "Bank of Abyssinia",
-    "DASHEN": "Dashen Bank"
+    "Dashen": "Dashen Bank"
 }
 
 SCRAPING_CONFIG = {
-    "reviews_per_bank": 800,   # try to collect 800 so you can keep >400 after cleaning
+    "reviews_per_bank": 400,
     "lang": "en",
     "country": "us",
     "max_retries": 3
-}
-
-DATA_PATHS = {
-    "raw": str(Path.cwd() / "data"),
-    "raw_reviews": str(Path.cwd() / "data" / "reviews_raw.csv"),
-    "clean_reviews": str(Path.cwd() / "data" / "reviews_clean.csv"),
-    "enriched_reviews": str(Path.cwd() / "data" / "reviews_enriched.csv")
 }
