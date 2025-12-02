@@ -1,0 +1,14 @@
+pandas
+google-play-scraper
+tqdm
+python-dateutil
+sqlalchemy
+psycopg2-binary
+python-dotenv
+transformers
+torch
+scikit-learn
+spacy
+nltk
+matplotlib
+python-pptx
